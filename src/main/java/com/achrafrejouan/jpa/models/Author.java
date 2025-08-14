@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -33,4 +34,7 @@ public class Author {
             insertable = false
     )
     private LocalDateTime updatedAt;
+
+    @ManyToMany(mappedBy = "authors")
+    private List<Course> courses;
 }
