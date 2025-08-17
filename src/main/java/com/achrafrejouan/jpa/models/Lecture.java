@@ -21,5 +21,9 @@ public class Lecture {
             name = "section_id"
     )
     private Section section;
+    @ManyToOne
+    @JoinColumn(
+            name = "resource_id"
+    )
     private Resources resource;
 }
