@@ -1,20 +1,16 @@
 package com.achrafrejouan.jpa.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Entity
+@EqualsAndHashCode(callSuper = true)
 @Data
+@Entity
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-public class Resources {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Resources extends BaseEntity {
     private String name;
     private int size;
     private String url;

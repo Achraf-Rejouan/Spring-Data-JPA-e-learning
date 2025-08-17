@@ -1,23 +1,19 @@
 package com.achrafrejouan.jpa.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 
-@Entity
+@EqualsAndHashCode(callSuper = true)
 @Data
+@Entity
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @NoArgsConstructor
-public class Course {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Course extends BaseEntity{
     private String title;
     private String description;
 
